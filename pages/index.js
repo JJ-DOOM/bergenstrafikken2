@@ -6,8 +6,22 @@ export default function Home({ trafficMessages = [] }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Bergenstrafikken</title>
+        <title>Trafikkmeldinger i Bergen</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Når BT forræder oss med abonnenttvang, snekrer vi selv">
+        <meta
+          property="og:url"
+          content="https://bergenstrafikken.vercel.app"
+        />
+        <meta property="og:title" content="Trafikkmeldinger i Bergen - uten mellommannen" />
+        <meta
+          property="og:description"
+          content="Når BT forræder oss med abonnenttvang, snekrer vi selv"
+        />
+        <meta
+          property="og:image"
+          content="/asd.png"
+        />
       </Head>
 
       <main className={styles.main}>
