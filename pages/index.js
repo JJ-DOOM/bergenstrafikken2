@@ -3,8 +3,6 @@ import styles from "../styles/Home.module.css";
 import { API_URL } from "../constants";
 
 export default function Home({ trafficMessages = [] }) {
-  console.log(trafficMessages);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +16,7 @@ export default function Home({ trafficMessages = [] }) {
         <p className={styles.description}>levert på ekspertlig vis</p>
 
         <div className={styles.grid}>
-          {trafficMessages.length > 0 &&
+          {trafficMessages.length > 0 ? (
             trafficMessages.map((tm, index) => (
               <div key={`${tm?.title}-${index}`} className={styles.card}>
                 <h3>{tm?.title}</h3>
@@ -27,7 +25,14 @@ export default function Home({ trafficMessages = [] }) {
                   <p key={index}>{tmc}</p>
                 ))}
               </div>
-            ))}
+            ))
+          ) : (
+            <div className={styles.card}>
+              <h3>No content@@@</h3>
+              <h4>Maybe API was killed :(</h4>
+              <p>Rip in pepperoni</p>
+            </div>
+          )}
         </div>
       </main>
     </div>
