@@ -8,7 +8,7 @@ export default function Home({ trafficMessages = [] }) {
       <Head>
         <title>Trafikkmeldinger i Bergen</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Når BT forræder oss med abonnenttvang, snekrer vi selv">
+        <meta name="description" content="Når BT forræder oss med abonnenttvang, snekrer vi selv" />
         <meta
           property="og:url"
           content="https://bergenstrafikken.vercel.app"
