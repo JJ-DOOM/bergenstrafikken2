@@ -3,15 +3,15 @@ import styles from "../../styles/Home.module.css";
 import TrafficMessage from "../TrafficMessage";
 import useTrafficMessages from "./hooks";
 
-export default function TrafficMessages({ initialTrafficMessages }) {
-  const { data: trafficMessages } = useTrafficMessages({
-    initialData: initialTrafficMessages,
+export default function TrafficMessages({ trafficMessages }) {
+  const { data } = useTrafficMessages({
+    initialData: trafficMessages,
   });
 
   return (
     <div className={styles.grid}>
-      {trafficMessages?.length > 0 ? (
-        trafficMessages.map((trafficMessage, index) => (
+      {data?.length > 0 ? (
+        data.map((trafficMessage, index) => (
           <TrafficMessage
             key={`${trafficMessage?.title}-${index}`}
             title={trafficMessage?.title}

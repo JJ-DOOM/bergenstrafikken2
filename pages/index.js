@@ -2,9 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import trafficService from "../services/trafficService";
 import * as React from "react";
-import { TrafficMessages, useTrafficMessages } from "../components";
+import { TrafficMessages } from "../components";
 
-export default function Home({ initialTrafficMessages }) {
+export default function Home({ trafficMessages }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +22,7 @@ export default function Home({ initialTrafficMessages }) {
 
         <p className={styles.description}>levert på ekspertlig vis</p>
 
-        <TrafficMessages initialTrafficMessages={initialTrafficMessages} />
+        <TrafficMessages trafficMessages={trafficMessages} />
       </main>
     </div>
   );
@@ -34,7 +34,7 @@ export default function Home({ initialTrafficMessages }) {
 export async function getStaticProps() {
   return {
     props: {
-      initialTrafficMessages: await trafficService.getTrafficMessages(),
+      trafficMessages: await trafficService.getTrafficMessages(),
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
