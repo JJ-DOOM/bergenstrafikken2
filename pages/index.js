@@ -1,7 +1,7 @@
+import * as React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import trafficService from "../services/trafficService";
-import * as React from "react";
 import { TrafficMessages } from "../components";
 
 export default function Home({ trafficMessages }) {
