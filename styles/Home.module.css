@@ -105,7 +105,7 @@
   font-size: 1.25rem;
   line-height: 1;
   text-transform: uppercase;
-  color: rgba(37, 37, 37, 0.6);
+  color: #666666;
 }
 .card h3 {
   margin: 0 0 1rem 0;
@@ -130,6 +130,12 @@
 }
 
 @media (max-width: 600px) {
+  .mobileHidden {
+    display: none;
+  }
+  .icons {
+    justify-content: center;
+  }
   .title {
     font-size: 1.8rem;
   }
