@@ -2,6 +2,9 @@ import * as React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import trafficService from "../services/trafficService";
+import Bus from "../public/svgs/bus.svg";
+import Car from "../public/svgs/car.svg";
+import Train from "../public/svgs/train.svg";
 import { TrafficMessages } from "../components";
 
 export default function Home({ trafficMessages }) {
@@ -10,6 +13,24 @@ export default function Home({ trafficMessages }) {
       <Head>
         <title>Trafikkmeldinger i Bergen</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+            rel="preload"
+            href="/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf"
+            as="font"
+            crossOrigin=""
+          />
         <meta name="description" content="Når BT forræder oss med abonnenttvang, snekrer vi selv" />
         <meta property="og:url" content="https://bergenstrafikken.vercel.app" />
         <meta property="og:title" content="Trafikkmeldinger i Bergen - uten mellommannen" />
@@ -18,8 +39,13 @@ export default function Home({ trafficMessages }) {
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.banner}>(Nesten) alltid oppdatert</div>
+        <div className={styles.icons}>
+            <Bus />
+            <Car />
+            <Train />
+        </div>
         <h1 className={styles.title}>Lokale trafikkmeldinger</h1>
-
         <p className={styles.description}>levert på ekspertlig vis</p>
 
         <TrafficMessages trafficMessages={trafficMessages} />
