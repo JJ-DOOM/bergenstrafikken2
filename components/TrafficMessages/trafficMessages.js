@@ -5,7 +5,7 @@ import useTrafficMessages from "./hooks";
 
 export default function TrafficMessages({ trafficMessages }) {
   const { data } = useTrafficMessages({
-    initialData: trafficMessages,
+    fallbackData: trafficMessages,
   });
 
   return (
