@@ -15,6 +15,8 @@ export default function TrafficMessage({ title, createdAt, content = [] }) {
             ))}
           </React.Fragment>
         );
+      case "embed-code":
+        return <div className={styles.embed} dangerouslySetInnerHTML={{ __html: value }} />;
       default:
         return null;
     }

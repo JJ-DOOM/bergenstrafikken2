@@ -129,6 +129,10 @@
   margin-top: 1rem;
 }
 
+.embed div {
+  margin: 8px auto !important;
+}
+
 @media (max-width: 600px) {
   .mobileHidden {
     display: none;
