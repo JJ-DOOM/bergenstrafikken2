@@ -5,9 +5,7 @@ export default function TrafficMessage({ title, createdAt, content = [] }) {
   const getContent = (item, index) => {
     const { type, value } = item;
     switch (type) {
-      case "text":
-        return <p key={index}>{value}</p>;
-      case "list":
+      case "chat":
         return (
           <React.Fragment key={index}>
             {value?.map((tmc, index) => (
@@ -17,6 +15,16 @@ export default function TrafficMessage({ title, createdAt, content = [] }) {
         );
       case "embed-code":
         return <div className={styles.embed} dangerouslySetInnerHTML={{ __html: value }} />;
+      case "list":
+        return (
+          <React.Fragment key={index}>
+            {value?.map((tmc, index) => (
+              <p key={index}>{`- ${tmc.value}`}</p>
+            ))}
+          </React.Fragment>
+        );
+      case "text":
+        return <p key={index}>{value}</p>;
       default:
         return null;
     }

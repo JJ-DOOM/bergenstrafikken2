@@ -1,0 +1,1 @@
+export const CHAT_TITLE_LENGTH_LIMIT = 50;
